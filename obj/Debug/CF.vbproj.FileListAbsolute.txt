@@ -1,0 +1,11 @@
+J:\Visual Studio 2017\Projects\Playground\CF\bin\Debug\CF.exe.config
+J:\Visual Studio 2017\Projects\Playground\CF\bin\Debug\CF.exe
+J:\Visual Studio 2017\Projects\Playground\CF\bin\Debug\CF.pdb
+J:\Visual Studio 2017\Projects\Playground\CF\bin\Debug\CF.xml
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.Resources.resources
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.vbproj.GenerateResource.Cache
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.vbproj.CoreCompileInputs.cache
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.exe
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.xml
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.pdb
+J:\Visual Studio 2017\Projects\Playground\CF\obj\Debug\CF.vbprojResolveAssemblyReference.cache
