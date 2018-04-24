@@ -19,5 +19,6 @@
         'a.sortByHeight(New List(Of Integer)({-1, 150, 190, 170, -1, -1, 160, 180}))
 
         a.reverseParentheses("test(str)ing")
+        Console.ReadKey()
     End Sub
 End Module
