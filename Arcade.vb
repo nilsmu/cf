@@ -258,12 +258,37 @@
         Next
         Return loIntResult
     End Function
-    Function reverseParentheses(s As String) As String
-        Dim strResult As String = ""
-        Dim intCount As Integer = 0
+
+    Function reverseString(s As String) As String
+        Dim res As String = ""
         For Each c As Char In s
-            If c = "(" Then intCount += 1
+            res = c & res
         Next
-        Return strResult
+        Return res
+    End Function
+
+    Function hasParentheses(s As String) As Boolean
+        Return (s.IndexOf("(") >= 0)
+    End Function
+
+    Sub findNextInnerMostParentheses(ByVal s As String, ByRef start As Integer, ByRef ende As Integer)
+        start = s.IndexOf("(")
+        Dim nexti As Integer = s.IndexOf("(", start + 1)
+        ende = s.IndexOf(")")
+        While (nexti >= 0) And (nexti < ende)
+            start = nexti
+            nexti = s.IndexOf("(", start + 1)
+            ende = s.IndexOf(")", start + 1)
+        End While
+    End Sub
+
+    Function reverseParentheses(s As String) As String
+        Dim start As Integer = 0
+        Dim ende As Integer = 0
+        While hasParentheses(s)
+            findNextInnerMostParentheses(s, start, ende)
+            s = s.Substring(0, start) & reverseString(s.Substring(start + 1, ende - start - 1)) & s.Substring(ende + 1, s.Length - ende - 1)
+        End While
+        Return s
     End Function
 End Class
