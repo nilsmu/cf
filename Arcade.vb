@@ -180,6 +180,7 @@
     Function willYou(young As Boolean, beautiful As Boolean, loved As Boolean) As Boolean
         Return IIf(loved, IIf((young And Not beautiful) OrElse (beautiful And Not young) OrElse (Not young And Not beautiful), True, False), IIf(young And beautiful, True, False))
     End Function
+
     Function metroCard(lastNumberOfDays As Integer) As List(Of Integer)
         Select Case lastNumberOfDays
             Case 28
@@ -291,4 +292,22 @@
         End While
         Return s
     End Function
+
+    Function alternatingSums(a As List(Of Integer)) As List(Of Integer)
+        Dim loIntResult As New List(Of Integer)
+        Dim intWeight1 As Integer = 0
+        Dim intWeight2 As Integer = 0
+
+        For i As Integer = 0 To a.Count - 1
+            If i Mod 2 = 0 Then
+                intWeight1 += a.Item(i)
+            Else
+                intWeight2 += a.Item(i)
+            End If
+        Next
+        loIntResult.Add(intWeight1)
+        loIntResult.Add(intWeight2)
+        Return loIntResult
+    End Function
+
 End Class

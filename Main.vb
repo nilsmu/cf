@@ -18,7 +18,10 @@
 
         'a.sortByHeight(New List(Of Integer)({-1, 150, 190, 170, -1, -1, 160, 180}))
 
-        a.reverseParentheses("test(str)ing")
+        'a.reverseParentheses("test(str)ing")
+
+        a.alternatingSums(New List(Of Integer)({50, 60, 60, 45, 70}))
+
         Console.ReadKey()
     End Sub
 End Module
