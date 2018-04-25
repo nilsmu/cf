@@ -342,10 +342,22 @@
                         loIntNewB.Add(b(i))
                     End If
                 Next
-                If loIntNewA.Count <= 2 Then boolResult = True
+                If loIntNewA.Count = 2 Then
+                    If loIntNewA.Item(0) = loIntNewB.Item(1) AndAlso loIntNewA.Item(1) = loIntNewB.Item(0) Then boolResult = True
+                End If
             End If
         End If
         Return boolResult
     End Function
 
+    Function arrayChange(inputArray As List(Of Integer)) As Integer
+        Dim intCounter As Integer = 0
+        For i As Integer = 1 To inputArray.Count - 1
+            While inputArray.Item(i) <= inputArray.Item(i - 1)
+                inputArray.Item(i) += 1
+                intCounter += 1
+            End While
+        Next
+        Return intCounter
+    End Function
 End Class
