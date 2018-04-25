@@ -360,4 +360,24 @@
         Next
         Return intCounter
     End Function
+
+    Function palindromeRearranging(inputString As String) As Boolean
+        Dim intCharCount As Integer = 0
+        Dim loCharNonPair As New List(Of Char)
+        For Each c As Char In inputString
+            'If inputString.Count(Function(x) x = c) Mod 2 <> 0 Then loCharNonPair.Add(c) += 1
+            intCharCount = 0
+            For Each c2 As Char In inputString
+                If c2 = c Then intCharCount += 1
+            Next
+            If intCharCount Mod 2 <> 0 Then
+                If Not loCharNonPair.Contains(c) Then loCharNonPair.Add(c)
+            End If
+        Next
+        If loCharNonPair.Count > 1 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 End Class
