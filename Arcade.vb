@@ -310,4 +310,42 @@
         Return loIntResult
     End Function
 
+    Function addBorder(picture As List(Of String)) As List(Of String)
+        Dim loStrResult As New List(Of String)
+        Dim strFirstLast As String = ""
+        For i As Integer = 0 To picture.Item(0).Length + 1
+            strFirstLast += "*"
+        Next
+        loStrResult.Add(strFirstLast)
+        For Each s As String In picture
+            loStrResult.Add("*" & s & "*")
+        Next
+        loStrResult.Add(strFirstLast)
+        Return loStrResult
+    End Function
+
+    Function areSimilar(a As List(Of Integer), b As List(Of Integer)) As Boolean
+        Dim boolResult As Boolean = True
+        Dim loIntNewA As New List(Of Integer)
+        Dim loIntNewB As New List(Of Integer)
+        If a.Count <> b.Count Then
+            boolResult = False
+        Else
+            For Each intB As Integer In b
+                If Not a.Contains(intB) Then boolResult = False
+            Next
+            If boolResult Then
+                For i As Integer = 0 To a.Count - 1
+                    If a(i) <> b(i) Then
+                        boolResult = False
+                        loIntNewA.Add(a(i))
+                        loIntNewB.Add(b(i))
+                    End If
+                Next
+                If loIntNewA.Count <= 2 Then boolResult = True
+            End If
+        End If
+        Return boolResult
+    End Function
+
 End Class

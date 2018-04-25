@@ -20,7 +20,9 @@
 
         'a.reverseParentheses("test(str)ing")
 
-        a.alternatingSums(New List(Of Integer)({50, 60, 60, 45, 70}))
+        'a.alternatingSums(New List(Of Integer)({50, 60, 60, 45, 70}))
+
+        a.areSimilar(New List(Of Integer)({1, 2, 3}), New List(Of Integer)({2, 1, 3}))
 
         Console.ReadKey()
     End Sub
