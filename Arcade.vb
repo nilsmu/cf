@@ -422,7 +422,20 @@
             intList.Add(i)
         Next
         For Each i As Integer In intList
-
+            For Each c As Char In Convert.ToString(i, 2)
+                If c = "1" Then intResult += 1
+            Next
         Next
+        Return intResult
+    End Function
+
+    Function mirrorBits(a As Integer) As Integer
+        Dim intResult As Integer
+        Dim strBitString As String = ""
+        For Each c As Char In Convert.ToString(a, 2)
+            strBitString = c + strBitString
+        Next
+        intResult = Convert.ToInt32(strBitString, 2)
+        Return intResult
     End Function
 End Class
