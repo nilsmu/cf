@@ -404,5 +404,5 @@
         End If
     End Function
 
-    'TEST in hotfix-branch
+    'TEST in master-branch
 End Class
