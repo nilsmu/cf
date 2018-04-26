@@ -380,4 +380,18 @@
             Return True
         End If
     End Function
+
+    Function killKthBit(n As Integer, k As Integer) As Integer
+        Dim intResult As Integer
+        Dim strBitString As String = Convert.ToString(n, 2)
+        Dim charArray As Char() = strBitString.ToCharArray()
+        charArray(charArray.Length - k) = "0"
+        strBitString = ""
+        For Each c As Char In charArray
+            strBitString += c
+        Next
+        intResult = Convert.ToInt32(strBitString, 2)
+        Return intResult
+    End Function
+
 End Class

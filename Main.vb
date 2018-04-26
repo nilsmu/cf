@@ -24,7 +24,9 @@
 
         'a.areSimilar(New List(Of Integer)({1, 2, 3}), New List(Of Integer)({2, 1, 3}))
 
-        a.palindromeRearranging("abaab")
+        'a.palindromeRearranging("abaab")
+
+        a.killKthBit(37, 3)
 
         Console.ReadKey()
     End Sub
