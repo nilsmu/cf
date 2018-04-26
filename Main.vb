@@ -26,7 +26,7 @@
 
         'a.palindromeRearranging("abaab")
 
-        a.killKthBit(37, 3)
+        a.killKthBit(1, 3)
 
         Console.ReadKey()
     End Sub
