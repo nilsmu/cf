@@ -413,4 +413,16 @@
         intResult = Convert.ToInt32(strBitString, 2)
         Return intResult
     End Function
+
+    Function rangeBitCount(a As Integer, b As Integer) As Integer
+        Dim intResult As Integer
+        Dim intList As New List(Of Integer)
+        intList.Add(a)
+        For i As Integer = a + 1 To b
+            intList.Add(i)
+        Next
+        For Each i As Integer In intList
+
+        Next
+    End Function
 End Class
