@@ -403,6 +403,4 @@
             Return intResult
         End If
     End Function
-
-    'TEST in master-branch
 End Class
