@@ -438,4 +438,28 @@
         intResult = Convert.ToInt32(strBitString, 2)
         Return intResult
     End Function
+
+    Function secondRightmostZeroBit(n As Integer) As Integer
+        Return rightMostZeroBitHelper(n)
+    End Function
+
+    Function rightMostZeroBitHelper(n As Integer) As Integer
+        Dim intResult As Integer
+        Dim strBitString As String = Convert.ToString(n, 2).PadLeft(4, "0")
+        Dim charArray As Char() = strBitString.ToCharArray
+        Array.Reverse(charArray)
+        Dim intCount As Integer = 0
+        Dim intPosition As Integer
+        For i As Integer = 0 To charArray.Length - 1
+            If charArray(i) = "0" Then
+                intCount += 1
+            End If
+            If intCount = 2 Then
+                intPosition = i
+                Exit For
+            End If
+        Next
+        intResult = 2 ^ intPosition
+        Return intResult
+    End Function
 End Class

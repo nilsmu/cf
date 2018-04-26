@@ -28,7 +28,9 @@
 
         'a.killKthBit(1, 3)
 
-        a.arrayPacking(New List(Of Integer)({24, 85, 0}))
+        'a.arrayPacking(New List(Of Integer)({24, 85, 0}))
+
+        a.secondRightmostZeroBit(1073741824)
 
         Console.ReadKey()
     End Sub
