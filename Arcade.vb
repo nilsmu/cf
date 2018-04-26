@@ -403,4 +403,14 @@
             Return intResult
         End If
     End Function
+
+    Function arrayPacking(a As List(Of Integer)) As Integer
+        Dim intResult As Integer
+        Dim strBitString As String = ""
+        For Each int As Integer In a
+            strBitString = Convert.ToString(int, 2).PadLeft(8, "0") + strBitString
+        Next
+        intResult = Convert.ToInt32(strBitString, 2)
+        Return intResult
+    End Function
 End Class

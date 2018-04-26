@@ -26,7 +26,9 @@
 
         'a.palindromeRearranging("abaab")
 
-        a.killKthBit(1, 3)
+        'a.killKthBit(1, 3)
+
+        a.arrayPacking(New List(Of Integer)({24, 85, 0}))
 
         Console.ReadKey()
     End Sub
