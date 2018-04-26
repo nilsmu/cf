@@ -382,17 +382,27 @@
     End Function
 
     Function killKthBit(n As Integer, k As Integer) As Integer
-        Dim intResult As Integer
-        Dim strBitString As String = Convert.ToString(n, 2)
-        Dim charArray As Char() = strBitString.ToCharArray()
-        charArray(charArray.Length - k) = "0"
-        strBitString = ""
-        For Each c As Char In charArray
-            strBitString += c
-        Next
-        intResult = Convert.ToInt32(strBitString, 2)
-        Return intResult
+        Return killBit(n, k)
     End Function
 
-    'TEST in master-branch
+    Function killBit(n As Integer, k As Integer) As Integer
+        If n = 0 Then
+            Return 0
+        ElseIf k = 0 Then
+            Return n
+        Else
+            Dim intResult As Integer
+            Dim strBitString As String = Convert.ToString(n, 2).PadLeft(k, "0")
+            Dim charArray As Char() = strBitString.ToCharArray()
+            charArray(charArray.Length - k) = "0"
+            strBitString = ""
+            For Each c As Char In charArray
+                strBitString += c
+            Next
+            intResult = Convert.ToInt32(strBitString, 2)
+            Return intResult
+        End If
+    End Function
+
+    'TEST in hotfix-branch
 End Class
