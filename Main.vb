@@ -30,7 +30,9 @@
 
         'a.arrayPacking(New List(Of Integer)({24, 85, 0}))
 
-        a.secondRightmostZeroBit(1073741824)
+        'a.secondRightmostZeroBit(1073741824)
+
+        a.swapAdjacentBits(74)
 
         Console.ReadKey()
     End Sub

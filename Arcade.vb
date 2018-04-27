@@ -462,4 +462,27 @@
         intResult = 2 ^ intPosition
         Return intResult
     End Function
+
+    Function swapAdjacentBits(n As Integer) As Integer
+        Return swapAdjacentBitsHelper(n)
+    End Function
+
+    Function swapAdjacentBitsHelper(n As Integer) As Integer
+        Dim intResult As Integer
+        Dim strBitString As String = Convert.ToString(n, 2)
+        If strBitString.Length Mod 2 <> 0 Then strBitString = "0" + strBitString
+        Dim strBitStringNew As String = ""
+        Dim charArray As Char() = strBitString.ToCharArray
+        Dim charTemp As Char
+        For i As Integer = 0 To charArray.Length - 2 Step 2
+            charTemp = charArray(i)
+            charArray(i) = charArray(i + 1)
+            charArray(i + 1) = charTemp
+        Next
+        For Each c As Char In charArray
+            strBitStringNew += c
+        Next
+        intResult = Convert.ToInt32(strBitStringNew, 2)
+        Return intResult
+    End Function
 End Class
