@@ -485,4 +485,30 @@
         intResult = Convert.ToInt32(strBitStringNew, 2)
         Return intResult
     End Function
+
+    Function differentRightmostBit(n As Integer, m As Integer) As Integer
+        Return differentRightmostBitHelper(n, m)
+    End Function
+
+    Function differentRightmostBitHelper(n As Integer, m As Integer) As Integer
+        Dim intPosition As Integer
+        Dim strBitStringN As String = Convert.ToString(n, 2)
+        Dim strBitStringM As String = Convert.ToString(m, 2)
+
+        While strBitStringN.Length <> strBitStringM.Length
+            If strBitStringN.Length < strBitStringM.Length Then
+                strBitStringN = "0" + strBitStringN
+            ElseIf strBitStringN.Length > strBitStringM.Length Then
+                strBitStringM = "0" + strBitStringM
+            End If
+        End While
+
+        For i As Integer = strBitStringN.Length - 1 To 0 Step -1
+            If Not strBitStringN.Substring(i, 1).Equals(strBitStringM.Substring(i, 1)) Then
+                intPosition = strBitStringN.Length - 1 - i
+                Exit For
+            End If
+        Next
+        Return 2 ^ intPosition
+    End Function
 End Class

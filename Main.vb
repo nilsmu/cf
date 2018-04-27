@@ -32,7 +32,9 @@
 
         'a.secondRightmostZeroBit(1073741824)
 
-        a.swapAdjacentBits(74)
+        'a.swapAdjacentBits(74)
+
+        a.differentRightmostBit(11, 13)
 
         Console.ReadKey()
     End Sub
