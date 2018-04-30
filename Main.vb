@@ -2,6 +2,7 @@
 
     Sub Main()
         Dim a As New Arcade
+        Dim i As New Interview
 
         'a.checkPalindrome("aabaa")
 
@@ -35,6 +36,8 @@
         'a.swapAdjacentBits(74)
 
         a.differentRightmostBit(11, 13)
+
+        i.firstDuplicate(New List(Of Integer)({2, 3, 3, 1, 5, 2}))
 
         Console.ReadKey()
     End Sub
